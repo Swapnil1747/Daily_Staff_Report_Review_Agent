@@ -218,11 +218,6 @@ streamlit run app.py
 ### Cloud Deployment
 The application can be deployed on:
 - Streamlit Cloud
-- Heroku
-- AWS EC2
-- Google Cloud Platform
-
-See `docs/DEPLOYMENT.md` for detailed deployment instructions.
 
 ## 🤝 Contributing
 
@@ -263,7 +258,6 @@ For support and questions:
 - Advanced filtering options
 - Historical trend analysis
 - Multi-language support
-- API endpoints
 
 ## 🏆 Acknowledgments
 - Built with Streamlit for the web interface
