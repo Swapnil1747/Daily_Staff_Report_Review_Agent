@@ -84,10 +84,8 @@ streamlit_template1/
 ├── sample_data.py         # Sample data generator
 ├── requirements.txt       # Python dependencies
 ├── README.md             # Project documentation
-└── docs/                 # Additional documentation
-    ├── API.md            # API documentation
-    ├── DEPLOYMENT.md     # Deployment guide
-    └── TROUBLESHOOTING.md # Troubleshooting guide
+└── uploads/
+    └── Candidate_Task_DailyReports.xlsx
 ```
 
 ### Key Components
