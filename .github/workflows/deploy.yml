@@ -1,0 +1,38 @@
+name: Deploy Daily Staff Report Review Agent
+
+on:
+  push:
+    branches:
+      - main  # Trigger deployment on push to the main branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v5
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.9'  # Specify the Python version
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run Streamlit application
+        run: |
+          nohup streamlit run app.py &  # Run Streamlit in the background
+
+      - name: Wait for Streamlit to start
+        run: sleep 10  # Adjust sleep time if necessary
+
+      - name: Test Streamlit application
+        run: |
+          curl --silent --fail http://localhost:8501 || exit 1  # Ensure the app is running
+
+      - name: Stop Streamlit application
+        run: pkill -f 'streamlit run app.py'  # Terminate the Streamlit process
